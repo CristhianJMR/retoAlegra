@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kitchen App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    
+    <h1>Kitchen App</h1>
+    <button id="orderButton">Realizar Pedido</button>
+    <div class="status">
+      <h2>Estado de la Cocina</h2>
+      <p>Órdenes en preparación: <span id="inProgress"></span></p>
+      <p>Órdenes completadas: <span id="completed"></span></p>
+    </div>
+    <div class="inventory">
+      <h2>Inventario de Alimentos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ingrediente</th>
+            <th>Cantidad Disponible</th>
+          </tr>
+        </thead>
+        <tbody id="inventoryBody">
+          <!-- Aquí se mostrarán los ingredientes y sus cantidades -->
+        </tbody>
+      </table>
+    </div>
+    <div class="history">
+      <h2>Historial de Compras</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ingrediente</th>
+            <th>Cantidad Comprada</th>
+            <th>Fecha y Hora</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody">
+          <!-- Aquí se mostrará el historial de compras -->
+        </tbody>
+      </table>
+    </div>
+    <div class="orders">
+      <h2>Historial de Pedidos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Receta</th>
+            <th>Ingredientes</th>
+            <th>Fecha y Hora</th>
+          </tr>
+        </thead>
+        <tbody id="orderBody">
+          <!-- Aquí se mostrará el historial de pedidos -->
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
