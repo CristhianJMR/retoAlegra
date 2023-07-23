@@ -58,9 +58,60 @@
         </tbody>
       </table>
     </div>
-    
+    <div class="orders">
+      <h2>Recetas disponibles</h2>
+      <button id="showTableButton" onclick="toggleTable()">recetas</button>
+      <div id="tableDiv" class="table-container" style="display: none;">
+        <table>
+          <thead>
+            <tr>
+              <th>Receta</th>
+              <th>Ingredientes</th>
+            </tr>
+          </thead>
+          <tbody id="recipeBody">
+            <tr>
+              <td>Ensalada César</td>
+              <td>Lettuce, Chicken, Cheese, Lemon, Ketchup</td>
+            </tr>
+            <tr>
+              <td>Arroz con pollo</td>
+              <td>Rice, Chicken, Tomato, Onion</td>
+            </tr>
+            <tr>
+              <td>Papas a la huancaína</td>
+              <td>Potato, Cheese, Lemon, Onion</td>
+            </tr>
+            <tr>
+              <td>Cheeseburger</td>
+              <td>Meat, Cheese, Tomato, Lettuce, Ketchup</td>
+            </tr>
+            <tr>
+              <td>Pollo al limón</td>
+              <td>Chicken, Lemon, Onion, Rice</td>
+            </tr>
+            <tr>
+              <td>Sopa de cebolla</td>
+              <td>Onion, Cheese, Meat, Tomato</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
+  
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    function toggleTable() {
+      const tableDiv = document.getElementById('tableDiv');
+      if (tableDiv.style.display === 'none') {
+        tableDiv.style.display = 'block';
+      } else {
+        tableDiv.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>

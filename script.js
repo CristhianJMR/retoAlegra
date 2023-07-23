@@ -110,7 +110,7 @@ const getKitchenStatus = async () => {
         alert('Pedido realizado con éxito');
         // Actualizamos el estado de la cocina después de hacer un pedido exitoso
         getKitchenStatus();
-        // Actualizamos el historial de compras después de hacer una compra exitosa
+        // Actualizamos el inventario de la cocina después de hacer una compra exitosa
         getFoodInventory();
         // Actualizamos el historial de compras después de hacer una compra exitosa
         getPurchaseHistory();
@@ -126,7 +126,7 @@ const getKitchenStatus = async () => {
       }
     } catch (error) {
       console.error('Error al realizar el pedido:', error);
-      alert('Ocurrió un error al realizar el pedido');
+      alert('Comprando ingredientes en la plaza');
     }
   };
   
