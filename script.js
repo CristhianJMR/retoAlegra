@@ -1,6 +1,6 @@
 const getKitchenStatus = async () => {
     try {
-      const response = await fetch('https://c64f2koz3e.execute-api.us-east-2.amazonaws.com/dev/get-kitchen-status');
+      const response = await fetch('https://i5htlf4jic.execute-api.us-east-2.amazonaws.com/dev/get-kitchen-status');
       const data = await response.json();
   
       const inProgressElement = document.getElementById('inProgress');
@@ -17,7 +17,7 @@ const getKitchenStatus = async () => {
   // Función para obtener el inventario de alimentos y mostrarlo en la tabla
   const getFoodInventory = async () => {
     try {
-      const response = await fetch('https://c64f2koz3e.execute-api.us-east-2.amazonaws.com/dev/get-food-inventory');
+      const response = await fetch('https://i5htlf4jic.execute-api.us-east-2.amazonaws.com/dev/get-food-inventory');
       const data = await response.json();
   
       const inventoryBody = document.getElementById('inventoryBody');
@@ -42,7 +42,7 @@ const getKitchenStatus = async () => {
   // Función para obtener el historial de compras y mostrarlo en la tabla
   const getPurchaseHistory = async () => {
     try {
-      const response = await fetch('https://c64f2koz3e.execute-api.us-east-2.amazonaws.com/dev/get-purchase-history');
+      const response = await fetch('https://i5htlf4jic.execute-api.us-east-2.amazonaws.com/dev/get-purchase-history');
       const data = await response.json();
   
       const historyBody = document.getElementById('historyBody');
@@ -70,7 +70,7 @@ const getKitchenStatus = async () => {
   // Función para obtener el historial de pedidos y mostrarlo en la tabla
   const getOrderHistory = async () => {
     try {
-      const response = await fetch('https://c64f2koz3e.execute-api.us-east-2.amazonaws.com/dev/get-kitchen-orders');
+      const response = await fetch('https://i5htlf4jic.execute-api.us-east-2.amazonaws.com/dev/get-kitchen-orders');
       const data = await response.json();
   
       const orderBody = document.getElementById('orderBody');
@@ -98,7 +98,7 @@ const getKitchenStatus = async () => {
   // Función para realizar un nuevo pedido
   const makeOrder = async () => {
     try {
-      const response = await fetch('https://c64f2koz3e.execute-api.us-east-2.amazonaws.com/dev/handle-order', {
+      const response = await fetch('https://i5htlf4jic.execute-api.us-east-2.amazonaws.com/dev/handle-order', {
         method: 'POST',
       });
   
