@@ -1,6 +1,6 @@
 const api = axios.create(
   {
-    baseURL: "https://i5htlf4jic.execute-api.us-east-2.amazonaws.com/dev/"
+    baseURL: "https://migmrgj2r3.execute-api.us-east-2.amazonaws.com/"
   }
 )
 
