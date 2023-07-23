@@ -1,7 +1,13 @@
+const api = axios.create(
+  {
+    baseURL: "https://i5htlf4jic.execute-api.us-east-2.amazonaws.com/dev/"
+  }
+)
+
 const getKitchenStatus = async () => {
     try {
-      const response = await fetch('https://i5htlf4jic.execute-api.us-east-2.amazonaws.com/dev/get-kitchen-status');
-      const data = await response.json();
+      const response = await api.get("/get-kitchen-status");
+      const data = response.data;
   
       const inProgressElement = document.getElementById('inProgress');
       inProgressElement.textContent = data.inProgress;
@@ -17,8 +23,8 @@ const getKitchenStatus = async () => {
   // Función para obtener el inventario de alimentos y mostrarlo en la tabla
   const getFoodInventory = async () => {
     try {
-      const response = await fetch('https://i5htlf4jic.execute-api.us-east-2.amazonaws.com/dev/get-food-inventory');
-      const data = await response.json();
+      const response = await api.get('get-food-inventory');
+      const data = response.data;
   
       const inventoryBody = document.getElementById('inventoryBody');
       inventoryBody.innerHTML = '';
@@ -42,8 +48,8 @@ const getKitchenStatus = async () => {
   // Función para obtener el historial de compras y mostrarlo en la tabla
   const getPurchaseHistory = async () => {
     try {
-      const response = await fetch('https://i5htlf4jic.execute-api.us-east-2.amazonaws.com/dev/get-purchase-history');
-      const data = await response.json();
+      const response = await api.get('/get-purchase-history');
+      const data = response.data;
   
       const historyBody = document.getElementById('historyBody');
       historyBody.innerHTML = '';
@@ -70,8 +76,8 @@ const getKitchenStatus = async () => {
   // Función para obtener el historial de pedidos y mostrarlo en la tabla
   const getOrderHistory = async () => {
     try {
-      const response = await fetch('https://i5htlf4jic.execute-api.us-east-2.amazonaws.com/dev/get-kitchen-orders');
-      const data = await response.json();
+      const response = await api.get('/get-kitchen-orders');
+      const data = response.data;
   
       const orderBody = document.getElementById('orderBody');
       orderBody.innerHTML = '';
@@ -98,11 +104,9 @@ const getKitchenStatus = async () => {
   // Función para realizar un nuevo pedido
   const makeOrder = async () => {
     try {
-      const response = await fetch('https://i5htlf4jic.execute-api.us-east-2.amazonaws.com/dev/handle-order', {
-        method: 'POST',
-      });
+      const response = await api.post('/handle-order');
   
-      if (response.ok) {
+      if (response.status == 200 ) {
         alert('Pedido realizado con éxito');
         // Actualizamos el estado de la cocina después de hacer un pedido exitoso
         getKitchenStatus();
@@ -117,7 +121,7 @@ const getKitchenStatus = async () => {
 
 
       } else {
-        const data = await response.json();
+        const data = await response.data;
         alert(data.message);
       }
     } catch (error) {
